@@ -40,18 +40,30 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
 }
-
-let playerSelection = playerPlay();
-let computerSelection = computerPlay();
-
-console.log( playRound(playerSelection, computerSelection) );
-
-// testing site
-function test() {
+// play 5 rounds of rps
+function game() {
+    // keep track of both player's scores
+    let playerScore = 0;
+    let computerScore = 0;
     var i;
-    for (i = 0; i < 10; i++) {
-        console.log(i);
-        console.log(computerPlay());
-    } 
+    for (i = 0; i < 5; i++) {
+        let playerSelection = playerPlay();
+        let computerSelection = computerPlay();
+        // determine who gets a point
+        let result = playRound(playerSelection, computerSelection);
+        if (result === 'win') {
+            playerScore++;
+        } else if (result === 'lose') {
+            computerScore++;
+        }
+        console.log(`Player: ${playerScore} vs Computer ${computerScore}`);
+    }
+    return `The final scores are Player: ${playerScore} and Computer: ${computerScore}`;
 }
+
+function givePoint() {
+    console.log(playerScore);
+}
+
+console.log(game());
 
