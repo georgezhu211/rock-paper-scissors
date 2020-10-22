@@ -61,9 +61,3 @@ function game() {
     return `The final scores are Player: ${playerScore} and Computer: ${computerScore}`;
 }
 
-function givePoint() {
-    console.log(playerScore);
-}
-
-console.log(game());
-
