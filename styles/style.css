@@ -1,0 +1,51 @@
+body {
+    background-color: #a8dda8;
+}
+
+.scoreboard {
+    display: flex;
+}
+
+.leftside, .rightside {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2d6187;
+}
+
+.display-container {
+    height: 100px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.btn-container {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #2d6187;
+    color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 32px;
+    border: none;
+    box-shadow: 0px 0px 15px #28abb9;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.display {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2d6187;
+    font-size: 32px;
+}

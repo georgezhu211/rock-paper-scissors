@@ -88,13 +88,13 @@ function updateScore(result) {
 }
 
 function checkWinner(){
-    if(playerScore == 5 || computerScore ==5) {
-        player.textContent = 0;
-        computer.textContent = 0;
-    }
     if(playerScore == 5) {
         display.textContent = "Congratulations, you are the winner!";
     } else if(computerScore == 5) {
         display.textContent = "You lost to a computer!";
+    }
+    if(playerScore == 5 || computerScore ==5) {
+        playerScore = 0;
+        computerScore = 0;
     }
 }
