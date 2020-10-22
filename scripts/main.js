@@ -24,8 +24,6 @@ function computerPlay() {
 // compare the output from user and computer
 function playRound(playerSelection, computerSelection) {
     // return win lose or draw
-    console.log(playerSelection + " vs " + computerSelection);
-
     if (playerSelection === computerSelection) return "draw";
 
     switch(playerSelection) {
@@ -61,3 +59,42 @@ function game() {
     return `The final scores are Player: ${playerScore} and Computer: ${computerScore}`;
 }
 
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display');
+const player = document.querySelector('.player');
+const computer = document.querySelector('.computer');
+
+
+let playerScore = 0;
+let computerScore = 0;
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.id;
+        let computerSelection = computerPlay();
+        let result = playRound(playerSelection, computerSelection);
+        display.textContent = `${playerSelection} vs ${computerSelection}, you ${result}!`;
+        updateScore(result);
+        checkWinner();
+    });
+});
+
+function updateScore(result) {
+    if(result == 'win') playerScore++;
+    if(result == 'lose') computerScore++;
+    player.textContent = playerScore;
+    computer.textContent = computerScore;
+
+}
+
+function checkWinner(){
+    if(playerScore == 5 || computerScore ==5) {
+        player.textContent = 0;
+        computer.textContent = 0;
+    }
+    if(playerScore == 5) {
+        display.textContent = "Congratulations, you are the winner!";
+    } else if(computerScore == 5) {
+        display.textContent = "You lost to a computer!";
+    }
+}
