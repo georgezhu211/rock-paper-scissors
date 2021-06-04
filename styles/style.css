@@ -1,51 +1,107 @@
 body {
-    background-color: #a8dda8;
+  background-color: #8ab6d6;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0061a8;
 }
 
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  font-size: 60px;
+  text-align: center;
+  padding: 40px 0;
+  font-weight: bold;
+}
 .scoreboard {
-    display: flex;
+  display: flex;
 }
 
-.leftside, .rightside {
-    width: 50%;
-    height: 150px;
-    text-align: center;
-    padding-top: 50px;
-    font-size: 32px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2d6187;
+.leftside,
+.rightside {
+  width: 50%;
+  height: 150px;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 32px;
 }
 
 .display-container {
-    height: 100px;
-    text-align: center;
-    padding: 40px 0;
+  height: 100px;
+  text-align: center;
 }
 
-.btn-container {
-    height: 200px;
-    display: flex;
-    justify-content: space-around;
+.player,
+.computer {
+  font-size: 76px;
+  color: white;
 }
 
-button {
-    background-color: #2d6187;
-    color: white;
-    height: 200px;
-    width: 200px;
-    border-radius: 100%;
-    font-weight: bold;
-    font-size: 32px;
-    border: none;
-    box-shadow: 0px 0px 15px #28abb9;
+.rps-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
 }
 
-button:hover {
-    transform: scale(1.05);
+.rps {
+  background-color: #2978b5;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.rps:disabled {
+  opacity: 0.3;
+}
+
+#rock {
+  background-image: url('../images/rock.png');
+  background-size: contain;
+}
+#paper {
+  background-image: url('../images/paper.png');
+  background-size: contain;
+}
+#scissors {
+  background-image: url('../images/scissors.png');
+  background-size: contain;
 }
 
 .display {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2d6187;
-    font-size: 32px;
+  font-size: 36px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.restart-btn {
+  font-size: 30px;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #0061a8;
+  color: white;
+  margin: 30px auto;
+  display: block;
+}
+
+.message {
+  text-align: center;
+  font-size: 30px;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px 10px green;
+  color: green;
+  border: none;
+  padding: 10px;
+}
+
+.win {
+  box-shadow: 1px 1px 10px 10px rgb(0, 196, 0);
+}
+
+.lose {
+  box-shadow: 1px 1px 10px 10px rgb(255, 58, 58);
 }
